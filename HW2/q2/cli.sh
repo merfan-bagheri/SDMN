@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# ./main.sh erfan /tmp/mycontainer/rootfs 100
-
-
 # Get the hostname and root filesystem path from command line arguments
 hostname=$1
 rootfs_path=$2

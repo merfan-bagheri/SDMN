@@ -27,8 +27,8 @@ After implementing the web server, write a Dockerfile and build an image for you
 
 ## Deliverables
 
-- **The code of your HTTP server.**
-- **A Dockerfile to build a docker image from your code.**
+- The code of your HTTP server.
+- A Dockerfile to build a docker image from your code.
 
 ## Build the Docker image
 
