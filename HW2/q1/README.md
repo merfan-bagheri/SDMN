@@ -1,6 +1,6 @@
 # Problem 1 (Container Networking) 45 points
 
-## Question 2
+## Question 1
 Use Linux network namespaces and create the topology in the following figure:
 
 ![Image](Images/pic_1.png)
