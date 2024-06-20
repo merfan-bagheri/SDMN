@@ -1,0 +1,4 @@
+flask==2.0.2
+werkzeug==2.0.2
+# docker build -t http-server .
+# docker run -p 8000:8000 http-server
