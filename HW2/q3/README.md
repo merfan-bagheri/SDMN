@@ -2,11 +2,18 @@
 This problem is about Docker. In this problem you write a simple HTTP server and dockerize it. You can use your language of choice for this problem.
 
 
-Your HTTP server has only one endpoint: /api/v1/status. This endpoint must handle GET and
-POST HTTP methods. When the request method is GET, the server sends this JSON response:
-{ "status": "OK" }
+Your HTTP server has only one endpoint: **/api/v1/status**. This endpoint must handle GET and POST HTTP methods. When the request method is GET, the server sends this JSON response:
+
+
+**{ "status": "OK" }**
+
+
 with status code 200. When the request method is POST with a body like this:
-{ "status": "not OK" }
+
+
+**{ "status": "not OK" }**
+
+
 The server returns the body:
 { "status": "not OK" }
 with status code 201. From now on every other GET request is responded with "not OK" status until
