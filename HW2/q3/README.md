@@ -11,13 +11,13 @@ Your HTTP server has only one endpoint: **/api/v1/status**. This endpoint must h
 with status code 200. When the request method is POST with a body like this:
 
 
-**{ "status": "not OK" }**
+> **{ "status": "not OK" }**
 
 
 The server returns the body:
 
 
-**{ "status": "not OK" }**
+> **{ "status": "not OK" }**
 
 
 with status code 201. From now on every other GET request is responded with "not OK" status until another POST request changes it to something else. Your server listens on port 8000.
