@@ -13,6 +13,7 @@ another POST request changes it to something else. Your server listens on port 8
 After implementing the web server, write a Dockerfile and build an image for your server. You
 should be able to create a container from that image and publish its port on your host.
 Deliverables:
+
 • The code of your HTTP server.
 • A Dockerfile to build a docker image from your code.
 
