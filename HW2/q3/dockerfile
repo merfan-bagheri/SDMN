@@ -2,7 +2,7 @@ FROM python:3.9-slim
 
 
 
-WORKDIR /app
+WORKDIR /HTTPServer
 
 
 
@@ -12,7 +12,7 @@ werkzeug==2.0.2
 
 
 
-COPY app.py .
+COPY HTTPServer.py .
 
 
 
@@ -20,4 +20,4 @@ EXPOSE 8000
 
 
 
-CMD ["python", "app.py"]
+CMD ["python", "HTTPServer.py"]
