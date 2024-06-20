@@ -50,7 +50,7 @@ sudo su
 Then, use the following command to create a new container:
 
 ```
-./cli.sh HOSTNAME ROOT_PATH MEMORY_USAGE_LIMIT_IN_MEGABYTE
+./cli.sh <HOSTNAME> <ROOT_PATH> <MEMORY_USAGE_LIMIT_IN_MEGABYTE>
 ```
 
 If you run the `ps fax` command to see the current processes:

@@ -90,3 +90,34 @@ ip netns exec ns1 ping -c3 10.10.0.2
 This will ping the IP address `10.10.0.2` (which is the address of `node3`) from the `ns1` namespace (which is the namespace of `node1`).
 
 The script also handles the case where the source or destination is the `router` namespace. In this case, it will use the appropriate IP address for the router's interfaces.
+
+# Routing Packets between Subnets(Answer 2)
+
+To route packets between the different subnets, you will need to add two interfaces, one for each bridge (`br1` and `br2`), and use IP forwarding to enable communication between the subnets.
+
+Here's your solution explained in more detail, with some grammar corrections:
+
+## Solution
+
+1. Add two interfaces, one for each bridge:
+   - **Interface 1**: Connect one side to `br1` and the other side to the kernel (root namespace).
+   - **Interface 2**: Connect one side to `br2` and the other side to the kernel (root namespace).
+
+2. Enable IP forwarding in the root namespace:
+   - This allows the kernel to forward packets between the different subnets.
+   - You can enable IP forwarding by setting the following sysctl parameter:
+     ```
+     sysctl -w net.ipv4.ip_forward=1
+     ```
+
+3. Configure the necessary routing rules in the root namespace:
+   - Add routes to the subnets connected to `br1` and `br2` using the appropriate interfaces.
+   - For example, if the subnet connected to `br1` is `172.0.0.0/24` and the subnet connected to `br2` is `10.10.0.0/24`, you would add the following routes:
+     ```
+     ip route add 172.0.0.0/24 dev interface1
+     ip route add 10.10.0.0/24 dev interface2
+     ```
+
+With this setup, the kernel will be able to forward packets between the different subnets using the two interfaces connected to the bridges. Packets from one subnet will be routed through the appropriate interface to the other subnet, enabling communication between the subnets.
+
+This solution avoids the need for a dedicated router and allows you to manage the routing directly in the kernel, using IP forwarding and routing rules.
