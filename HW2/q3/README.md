@@ -15,15 +15,22 @@ with status code 200. When the request method is POST with a body like this:
 
 
 The server returns the body:
-{ "status": "not OK" }
-with status code 201. From now on every other GET request is responded with "not OK" status until
-another POST request changes it to something else. Your server listens on port 8000.
-After implementing the web server, write a Dockerfile and build an image for your server. You
-should be able to create a container from that image and publish its port on your host.
-Deliverables:
 
-• The code of your HTTP server.
-• A Dockerfile to build a docker image from your code.
+
+**{ "status": "not OK" }**
+
+
+with status code 201. From now on every other GET request is responded with "not OK" status until another POST request changes it to something else. Your server listens on port 8000.
+
+
+After implementing the web server, write a Dockerfile and build an image for your server. You should be able to create a container from that image and publish its port on your host.
+
+
+## Deliverables:
+
+
+**• The code of your HTTP server.**
+**• A Dockerfile to build a docker image from your code.**
 
 # Build the Docker image
 docker build -t http-server .
