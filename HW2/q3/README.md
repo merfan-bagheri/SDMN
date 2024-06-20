@@ -1,6 +1,7 @@
 # Problem 3 (Docker) 20 points
-This problem is about Docker. In this problem you write a simple HTTP server and dockerize it. You
-can use your language of choice for this problem.
+This problem is about Docker. In this problem you write a simple HTTP server and dockerize it. You can use your language of choice for this problem.
+
+
 Your HTTP server has only one endpoint: /api/v1/status. This endpoint must handle GET and
 POST HTTP methods. When the request method is GET, the server sends this JSON response:
 { "status": "OK" }
