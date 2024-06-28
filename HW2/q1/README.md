@@ -95,8 +95,6 @@ The script also handles the case where the source or destination is the `router`
 
 To route packets between the different subnets, you will need to add two interfaces, one for each bridge (`br1` and `br2`), and use IP forwarding to enable communication between the subnets.
 
-Here's your solution explained in more detail, with some grammar corrections:
-
 ## Solution
 
 1. Add two interfaces, one for each bridge:
@@ -124,6 +122,8 @@ This solution avoids the need for a dedicated router and allows you to manage th
 ## Routing Between Two Subnets in Two Servers Using a Layer 2 Switch (Answer 3)
 
 To connect two different subnets on two different servers using a Layer 2 switch, you can follow these steps:
+
+## Solution
 
 Firstly, utilize the IP forwarding feature in the Linux kernel of the Virtual Machines (VMs). For instance, in VM1 where ‘br1’ is located, define an interface and connect it to the physical interface that is linked to the physical switch.
 
