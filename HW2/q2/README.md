@@ -24,7 +24,10 @@ in the container, we should see the bash process as PID 1. Your container runtim
 - A document named `README.md` explaining how to run the CLI.
 
 # Problem Explanation
-
+# Please note, if you want to run a bash script from your command line interface (CLI), you should first make it executable with this code:
+```bash
+   chmod +x script.sh
+   ```
 This code implements a simple container runtime using Bash. The key features of the implementation are:
 
 1. **Namespace Creation**: The container runtime creates new namespaces for the container, including `net`, `mnt`, `pid`, and `uts`.

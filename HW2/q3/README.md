@@ -30,6 +30,10 @@ After implementing the web server, write a Dockerfile and build an image for you
 - The code of your HTTP server.
 - A Dockerfile to build a docker image from your code.
 
+## Please note, if you want to run a bash script from your command line interface (CLI), you should first make it executable with this code:
+```bash
+   chmod +x script.sh
+   ```
 ## Build the Docker image
 
 To build the Docker image of HTTPServer, run this code in the Dockerfile directory:

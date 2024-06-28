@@ -38,6 +38,11 @@ What if the namespaces are on different servers (virtual machine or physical ser
 - Two documents explaining your answers to questions regarding figures 2 and 3
 
 # Problem Explanation
+# Please note, if you want to run a bash script from your command line interface (CLI), you should first make it executable with this code:
+```bash
+   chmod +x script.sh
+   ```
+
 ## Network Topology and Ping Explanation(Answer 1)
 
 To create the network topology and run the ping tests, follow these steps:
