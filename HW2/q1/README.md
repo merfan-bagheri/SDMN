@@ -91,7 +91,7 @@ This will ping the IP address `10.10.0.2` (which is the address of `node3`) from
 
 The script also handles the case where the source or destination is the `router` namespace. In this case, it will use the appropriate IP address for the router's interfaces.
 
-# Routing Packets between Subnets(Answer 2)
+## Routing Packets between Subnets(Answer 2)
 
 To route packets between the different subnets, you will need to add two interfaces, one for each bridge (`br1` and `br2`), and use IP forwarding to enable communication between the subnets.
 
@@ -121,3 +121,16 @@ Here's your solution explained in more detail, with some grammar corrections:
 With this setup, the kernel will be able to forward packets between the different subnets using the two interfaces connected to the bridges. Packets from one subnet will be routed through the appropriate interface to the other subnet, enabling communication between the subnets.
 
 This solution avoids the need for a dedicated router and allows you to manage the routing directly in the kernel, using IP forwarding and routing rules.
+## Routing Between Two Subnets in Two Servers Using a Layer 2 Switch (Answer 3)
+
+To connect two different subnets on two different servers using a Layer 2 switch, you can follow these steps:
+
+Firstly, utilize the IP forwarding feature in the Linux kernel of the Virtual Machines (VMs). For instance, in VM1 where ‘br1’ is located, define an interface and connect it to the physical interface that is linked to the physical switch.
+
+On the other hand, in the second server and in VM2, define two interfaces. Connect one end of the interface to the physical interface of VM2 and assign the default gateway IP of the first subnet (for example, 172.0.0.1/24) to the other end of this interface.
+
+Next, connect another interface to ‘br2’ and assign the default gateway IP of the second subnet (for example, 10.10.0.1/24) to the other end of this interface, and leave it in the kernel.
+
+Now, if you activate IP forwarding in the kernel of the second VM, the routing will be done correctly. This is because the kernel has been used as a router and the switch has been used to connect the first gateway with VM1 and VM1 with the first gateway.
+
+If there were multiple subnets or multiple VMs and servers, the kernel could also be used as a router for the VMs in one of the VMs in the same way
